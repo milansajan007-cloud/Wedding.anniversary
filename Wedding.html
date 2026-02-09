@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Anniversary</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#fff5f7;
+  margin:0;
+  padding:15px;
+}
+
+.page{
+  display:none;
+}
+.page.active{
+  display:block;
+}
+
+h2{
+  text-align:center;
+  color:#b0003a;
+}
+
+.question{
+  background:#ffffff;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.option{
+  display:block;
+  margin:6px 0;
+  cursor:pointer;
+  font-size:16px;
+}
+.option span{
+  font-size:18px;
+  margin-right:6px;
+}
+
+button{
+  display:block;
+  margin:20px auto;
+  padding:12px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:25px;
+  background:#28a745;
+  color:white;
+  cursor:pointer;
+}
+button:hover{
+  background:#218838;
+}
+
+/* IMAGE PAGE */
+.images img{
+  width:100%;
+  max-width:400px;
+  display:block;
+  margin:15px auto;
+  border-radius:15px;
+}
+
+/* FINAL PAGE */
+.final{
+  text-align:center;
+  margin-top:40px;
+}
+
+.party{
+  font-size:40px;
+  animation:pop 0.6s infinite alternate;
+}
+
+@keyframes pop{
+  from{transform:translateY(0);}
+  to{transform:translateY(-15px);}
+}
+
+.heart{
+  font-size:90px;
+  animation:beat 1s infinite;
+  margin-top:15px;
+}
+
+@keyframes beat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.3);}
+}
+
+.message{
+  font-size:18px;
+  line-height:1.6;
+  color:#444;
+  margin-top:20px;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 : QUESTIONS -->
+<div class="page active" id="page1">
+<h2>💍 Anniversary Questions 💍</h2>
+
+<div class="question">
+1. വിവാഹദിവസം ഇന്നും വ്യക്തമായി ഓർമ്മയുണ്ടോ? ✨
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> അല്പം</label>
+<label class="option" onclick="tick(this)"><span>☐</span> album കണ്ടാൽ മാത്രം 😄</label>
+</div>
+
+<div class="question">
+2. ആ ദിവസം അല്പം പേടിയുണ്ടായിരുന്നോ? 😅
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> അല്പം</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ആരോടും പറഞ്ഞില്ല 😆</label>
+</div>
+
+<div class="question">
+3. 23 വർഷങ്ങൾ വേഗത്തിൽ കടന്നുപോയെന്ന് തോന്നുന്നുണ്ടോ? ⏰
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ലാ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> calendar പറഞ്ഞു</label>
+</div>
+
+<div class="question">
+4. നിങ്ങളുടെ പങ്കാളിയുടെ ഏറ്റവും നല്ല സ്വഭാവം? 🌸
+<label class="option" onclick="tick(this)"><span>☐</span> കരുണ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> നിഷ്കളങ്കത</label>
+<label class="option" onclick="tick(this)"><span>☐</span> എന്നെ സഹിക്കുന്നത് 😆</label>
+</div>
+
+<div class="question">
+5. ജീവിതം വീണ്ടും തുടങ്ങേണ്ടി വന്നാൽ ഇതേ ആളെ തന്നെ തിരഞ്ഞെടുക്കുമോ? 💖
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ, കണ്ണടച്ച്</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഒന്നൂടെ ആലോചിക്കണം 😆</label>
+</div>
+
+<div class="question">
+6. കഷ്ടകാലങ്ങൾ നിങ്ങളെ കൂടുതൽ അടുത്താക്കിയോ? 🤝
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ, തീർച്ചയായും</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<div class="question">
+7. Micah & Manna കാരണം ജീവിതം കൂടുതൽ അർത്ഥവത്തായോ? 🌸
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ലാ</label>
+</div>
+
+<div class="question">
+8. ഇന്നും പരസ്പരം മിസ് ചെയ്യുന്ന നിമിഷങ്ങളുണ്ടോ? 🥹
+<label class="option" onclick="tick(this)"><span>☐</span> ഉണ്ട്</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<div class="question">
+9. മാതാപിതാക്കളായി ഏറ്റവും അഭിമാനം തോന്നിയ ഒരു ഓർമ്മയുണ്ടോ? 🥹🌸
+<label class="option" onclick="tick(this)"><span>☐</span> ഉണ്ട്</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<div class="question">
+10. ഇനി വരാനിരിക്കുന്ന വർഷങ്ങൾ ഒരുമിച്ച് സന്തോഷത്തോടെ പോകുമെന്ന് വിശ്വസിക്കുന്നുണ്ടോ? 🤍
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<button onclick="nextPage(2)">Submit ✅</button>
+</div>
+
+<!-- PAGE 2 : IMAGES -->
+<div class="page" id="page2">
+<h2>📸 Beautiful Memories</h2>
+<div class="images">
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+</div>
+<button onclick="nextPage(3)">Next ⏩</button>
+</div>
+
+<!-- PAGE 3 : FINAL -->
+<div class="page" id="page3">
+<div class="final">
+<div class="party">🎉 🎉 🎉</div>
+
+<h1>HAPPY WEDDING ANNIVERSARY</h1>
+
+<p class="message">
+Happy Anniversary to my dear Pappa and Mummy 💖<br><br>
+Watching your journey together has taught us what true love,
+understanding, and commitment truly mean.<br><br>
+You are not just parents, but our strongest example of partnership,
+patience, and family values.<br><br>
+Through every joy and challenge, you’ve stood by each other with grace
+and strength, showing us what it means to love selflessly.<br><br>
+Your togetherness is the foundation of our home and the reason we believe
+in lasting love.<br><br>
+May your bond grow stronger with every passing year, filled with good
+health, peace, and countless more beautiful moments together.
+</p>
+
+<div class="heart">❤️</div>
+</div>
+</div>
+
+<script>
+function tick(el){
+  el.querySelector("span").innerText="✅";
+}
+
+function nextPage(num){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById("page"+num).classList.add("active");
+}
+</script>
+
+</body>
+</html>
